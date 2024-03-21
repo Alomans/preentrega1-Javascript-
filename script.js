@@ -103,49 +103,79 @@ while (codProd != 0) {
 //descuento
 
 if (total >= 10000) {
+  let total1 = 0;
+  let desc1 = 0;
+  const desc = 0.1;
 
-    let desc1 = 0;
-    const desc = .10
+  alert(
+    "Su compra sobrepasa los $10,000 \nSe le aplicara un descuento del 10%"
+  );
+  desc1 = total * desc;
+  total1 = total - desc1;
+  alert(total1.toFixed(2));
+  let iva1 = 0;
+  const iva = 0.16;
+  let rec_cre1 = 0;
+  const rec_cre = 0.04;
+  let total2 = 0;
+  let total3 = 0;
 
-    alert ("Su compra sobrepasa los $10,000 \nSe le aplicara un descuento del 10%")
-    desc1 = total * desc;
-    total1 = total1 - desc1;
-}
-//pago
-let iva1 = 0;1
-const iva = .16;
-const rec_cre = .04; 
+  let Metpa = parseInt(
+    prompt("Elija su metodo de pago:\n1.- Efectivo 💵\n2.- Tarjeta 💳\n👾 ")
+  );
 
-let Metpa = parseInt(
-  prompt ("Elija su metodo de pago:\n1.- Efectivo 💵\n2.- Tarjeta 💳\n👾 ")
-);
-
-while (Metpa == 1 && Metpa == 2){
-    if (Metpa == 1) {
-        iva1 = total1 * iva;
-        total2 = total2 + iva1;
-        alert ("Su total a pagar es de $" + total2);
+  if (Metpa == 1) {
+    iva1 = total1 * iva;
+    total2 = total1 + iva1;
+    alert("Su total a pagar es de $" + total2.toFixed(2));
+  } else if (Metpa == 2) {
+    let tarj = parseInt(
+      prompt("Que es su Tarjeta:\n1.- Debito \n2.- Credito \n👾")
+    );
+    if (tarj == 1) {
+      iva1 = total1 * iva;
+      total2 = total1 + iva1;
+      alert("Su total a pagar es de $" + total2.toFixed(2));
+    } else {
+      iva1 = total1 * iva;
+      total2 = total1 + iva1;
+      rec_cre1 = total2 * rec_cre;
+      total3 = total2 + rec_cre1;
+      alert("Su total a pagar es de $" + total31.toFixed(2));
     }
-    else if (Metpa == 2) {
-        let tarj = parseInt(
-            prompt ("Que es su Tarjeta:\n1.- Debito \n2.- Credito \n👾")
-        );
-        if (tarj == 1) {
-            iva1 = total1 * iva;
-            total2 = total2 + iva1;
-            alert ("Su total a pagar es de $" + total2);
-        }
-        else{
-            iva1 = total1 * iva;
-            total2 = total2 + iva1;
+  }
+} else {
+  //pago
+  let iva1 = 0;
+  const iva = 0.16;
+  let rec_cre1 = 0;
+  const rec_cre = 0.04;
+  let total1 = 0;
+  let total2 = 0;
 
-            alert ("Su total a pagar es de $" + total2);
-        }
+  let Metpa = parseInt(
+    prompt("Elija su metodo de pago:\n1.- Efectivo 💵\n2.- Tarjeta 💳\n👾 ")
+  );
+
+  if (Metpa == 1) {
+    iva1 = total * iva;
+    total1 = total + iva1;
+    alert("Su total a pagar es de $" + total1.toFixed(2));
+  } else if (Metpa == 2) {
+    let tarj = parseInt(
+      prompt("Que es su Tarjeta:\n1.- Debito \n2.- Credito \n👾")
+    );
+    if (tarj == 1) {
+      iva1 = total * iva;
+      total1 = total + iva1;
+      alert("Su total a pagar es de $" + total1.toFixed(2));
+    } else {
+      iva1 = total * iva;
+      total1 = total + iva1;
+      rec_cre1 = total1 * rec_cre;
+      total2 = total1 + rec_cre1;
+
+      alert("Su total a pagar es de $" + total2.toFixed(2));
     }
-    else {
-        alert ("Opcion Invalida")
-        let Metpa = parseInt(
-            prompt ("Elija su metodo de pago:\n1.- Efectivo 💵\n2.- Tarjeta 💳\n👾 ")
-        );
-    }
+  }
 }
